@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <title> Calc Nome | Plataforma de cálculo de área</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="./images/pattern_mainframe.png" class="logo" alt=""/>
+            <ul>
+                <li><a>Home</a></li>
+                <li><a>Sobre</a></li>
+                <li><a>Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="mainFrame">
+            <h1>Calc Nome</h1>
+            <h2>Site Calculador de Formas</h2>
+        </div>
+        <div class="formaTitle">
+            <span class="mainBarra"></span>
+            <h3>Escolha uma forma para começar a aventura!</h3>
+        </div>
+        <div id="formaContainer">
+            <div id="circulo" class="formaBox">
+                <img src="./images/circulo.png" class="formaImage" alt="">
+                <div class="formaBarra"></div>
+                <p>Calcular Círculo</p>
+            </div>
+            <div id="cubo" class="formaBox">
+                <img src="./images/cubo.png" class="formaImage" alt="">
+                <div class="formaBarra"></div>
+                <p>Calcular Cubo</p>
+            </div>
+            <div id="retangulo" class="formaBox">
+                <img src="./images/retangulo.png" class="formaImage" alt="">
+                <div class="formaBarra"></div>
+                <p>Calcular Retangulo</p>
+            </div>
+            <div id="romboedro" class="formaBox">
+                <img src="./images/romboedro.png" class="formaImage" alt="">
+                <div class="formaBarra"></div>
+                <p>Calcular Romboedro</p>
+            </div>
+            <div id="trapezoide" class="formaBox">
+                <img src="./images/trapezoide.png" class="formaImage" alt="">
+                <div class="formaBarra"></div>
+                <p>Calcular Trapezoide</p>
+            </div>
+            <div id="poligono" class="formaBox">
+                <img src="./images/poligono.png" class="formaImage" alt="">
+                <div class="formaBarra"></div>
+                <p>Calcular Polígono</p>
+            </div>
+            <div id="quadrado" class="formaBox">
+                <img src="./images/quadrado.png" class="formaImage" alt="">
+                <div class="formaBarra"></div>
+                <p>Calcular Quadrado</p>
+            </div>
+            <div id="cuboide" class="formaBox">
+                <img src="./images/cuboide.png" class="formaImage" alt="">
+                <div class="formaBarra"></div>
+                <p>Calcular Cubóide</p>
+            </div>
+        </div>
+        <div id="addForma" class="formaBox"><p>+ Mais Formas Por Vir +</p></div>
+        <article>
+            <img src="./images/close.png" id="closeForma"/>
+            <h1>Calculo da Área do <span class="NomeDaForma"></span></h1>
+            <form>
+                <input type="number" id="numero" placeholder="Informe o primeiro valor" pattern="[0-9]+$" min="0"/>
+                <input type="number" id="numero2" placeholder="Informe o segundo valor" pattern="[0-9]+$" min="0"/>
+                <input type="number" id="numero3" placeholder="Informe o terceito valor" pattern="[0-9]+$" min="0"/>
+                <div class="barra"></div>
+                <div class="mostraConta">
+                    <h2>Fórmula Utilizada</h2>
+                    <p id="formaFormula"></p>
+                </div>
+                <div class="mostraResult">
+                    <h2>Resultado</h2>
+                    <p id="formaResult">O resultado aparece aqui</p>
+                </div>
+                <div class="maisInforma">
+                    <h2>Saiba mais da figura</h2>
+                </div>
+            </form>
+        </article>
+        <div id="backForma"></div>
+    </main>
+    <footer>
+        <nav>
+            <div class="logoFoot">
+                <img src="./images/pattern_mainframe.png" class="logo" alt=""/>
+                <p>© 2024 Calc Nome. Todos os Direitos Reservados<div></div></p>
+            </div>
+            <div class="links">
+                <p><a>Política de Privacidade</a></p>
+                <ul>
+                    <li><a><img src="./images/facebook.svg" alt="Íncone da rede social Facebook."/></a></li>
+                    <li><a><img src="./images/instagram.svg" alt="Íncone da rede social Instagram."/></a></li>
+                    <li><a><img src="./images/twitter.svg" alt="Íncone da rede social Twitter."/></a></li>
+                    <li><a><img src="./images/youtube.svg" alt="Íncone da rede social YouTube."/></a></li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
+
+    <script src="./assets/js/home.js"></script>
+</body>
+</html>

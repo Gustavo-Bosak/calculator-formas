@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+:root {
+    --backgC: #CDC3CD;
+    --mainC: #F00050;
+    --segC: #00CFF0;
+    --terC: #9400E3;
+    --quaC: #F0CF00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a, ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column nowrap;
+    width: 100vw;
+    height: 100vh;
+    background: var(--mainC) url('../../images/pattern_backg.png');
+    font-family: 'Lilita One', Arial, sans-serif;
+}
+
+header, footer {
+    display: flex;
+    justify-content: center;
+    background: var(--mainC) top/20% url('../../images/pattern_main.png');
+    width: 100%;
+    padding-block: 3vh;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.logo {
+    height: 50px;
+    width: 200px;
+    object-fit: cover;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #9400E3;
+    flex-flow: wrap;
+}
+
+li {
+    padding-block: 15px;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+    background: var(--backgC);
+    width: 80%;
+    max-width: 1230px;
+    padding-inline: 2%;
+}
+
+#mainFrame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    background: var(--terC)  top/20% url('../../images/pattern_third.png');
+    width: 100vw;
+    height: fit-content;
+    text-align: center;
+}
+
+#mainFrame h1 {
+    font-size: 440%;
+    font-weight: 900;
+}
+
+#mainFrame h2 {
+    font-size: 180%;
+    font-weight: 800;
+}
+
+.formaTitle {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: fit-content;
+    margin-block: 30px;
+}
+
+h3 {
+    background: var(--segC);
+    height: fit-content;
+    padding: 2%;
+    border-radius: 15px;
+    font-size: 340%;
+}
+
+.mainBarra {
+    background: #000000;
+    min-width: 8px;
+    height: 100%;
+    margin-right: 16px;
+    border-radius: 100vw;
+}
+
+#formaContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    background: var(--mainC) top/20% url('../../images/pattern_mainforma.png');
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    padding: 0.8%;
+    border-radius: 30px;
+}
+
+.formaBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    background: #F0E6EB;
+    width: 23%;
+    min-width: 280px;
+    margin-block: 1%;
+    margin-inline: 0.8%;
+    border-radius: 15px;
+}
+
+.formaBox p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 130%;
+    font-weight: 1000;
+    margin-block: 10%;
+}
+
+.formaImage {
+    height: 300px;
+    width: 80%;
+    background: var(--quaC) top/80% url('../../images/pattern_third.png');
+    object-fit: cover;
+    margin-top: 10%;
+}
+
+.formaBarra {
+    background: var(--terC);
+    height: 6px;
+    width: 70%;
+    margin-top: 5%;
+    border-radius: 100vw;
+}
+
+#addForma {
+    background: var(--terC);
+    width: fit-content;
+    min-width: 0;
+    margin-top: 30px;
+    margin-bottom: 10%;
+    padding-inline: 2%;
+    color: #ffffff;
+}
+
+/*  */
+
+#backForma {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: column nowrap;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+article {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    background: var(--terC);
+    width: 30%;
+    min-width: 360px;
+    padding-block: 1%;
+    padding-inline: 2%;
+    border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    animation-name: animaAbre;
+    animation-duration: 0.4s
+}
+
+#closeForma {
+    box-shadow: 3px 6px 4px rgba(0, 0, 0, 0.4);
+    width: 15%;
+    border-radius: 100vw;
+    cursor: pointer;
+    position: absolute;
+    top: -5%;
+    left: -5%;
+}
+
+article h1 {
+    width: 86%;
+    margin-block: 5%;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    width: 80%;
+}
+
+form div:not(.barra) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    width: 100%;
+    margin-bottom: 5%;
+    padding-block: 5%;
+    border-radius: 15px;
+}
+
+form div p {
+    padding-inline: 6%;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 1000;
+    text-align: center;
+}
+
+.barra {
+    background: var(--backgC);
+    height: 2px;
+    width: 90%;
+    margin-top: 3%;
+    border-radius: 100vw;
+}
+
+.mostraConta {
+    margin-top: 5%;
+}
+
+.mostraConta, .mostraResult {
+    background: var(--segC) top/30% url('../../images/pattern_second.png');
+}
+
+.maisInforma {
+    background: var(--quaC) top/30% url('../../images/pattern_second.png');
+}
+
+article h2 {
+    font-weight: 900;
+    font-size: 25px;
+}
+
+input {
+    width: 100%;
+    background: var(--backgC);
+    border: none;
+    margin-bottom: 3%;
+    padding: 4%;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+#buttonCalc {
+    background: var(--mainC);
+    color: #FFFFFF;
+}
+
+/*  */
+
+footer div {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+}
+
+.logoFoot {
+    width: 50%;
+    background: #F0CF00;
+}
+
+.logoFoot div {
+    background: #000000;
+    height: 50px;
+    width: 2px;
+    margin-left: 20px;
+}
+
+.links {
+    width: 50%;
+    background: #00CFF0;
+}
+
+footer ul img {
+    height: 25px;
+}
+
+/*  */
+
+a:hover {
+    cursor: pointer;
+}
+
+.formaBox:not(#addForma):hover {
+    transform: scale(1.1);
+    transition: 0.4s;
+    background: var(--segC);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+#buttonCalc:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 1520px) {
+    footer nav ul:first-of-type {
+        flex-flow: column;
+    }
+}
+
+@media (max-width: 1150px) {
+    .formaBox {
+        margin-block: 10px;
+    }
+}
+
+@media (max-width: 735px) {
+    #formaContainer {
+        width: min-content;
+        padding-inline: 20px;
+    }
+}
+
+@keyframes animaAbre {
+  from {scale: 0.5;}
+  to {scale: 1;}
+}
+
+@keyframes animaFecha {
+    from {scale: 1;}
+    to {scale: 0.5;}
+}
+
+/* 
+
+Color Palette
+    #CBBBC0 -> Greyish
+    #DCD7E6 -> Greyish 2
+    #CDC3CD -> Greyish 3
+    #EBF0F5 -> Greyish 4
+    #F00050 -> Pinkish
+    #F0CF00 -> Yellowish
+    #00CFF0 -> Blueish
+    'https://mir-s3-cdn-cf.behance.net/project_modules/disp/17f47f20075359.562e517471adb.gif' -> Animated Shape Gifs
+*/
