@@ -26,17 +26,22 @@ body {
     width: 100vw;
     height: 100vh;
     background: var(--mainC) url('../../images/pattern_backg.png');
-    font-family: 'Lilita One', Arial, sans-serif;
+    font: 400 100% 'Lilita One', Arial, sans-serif;
 }
 
 header, footer {
     display: flex;
     justify-content: center;
-    background: var(--mainC) top/20% url('../../images/pattern_main.png');
+    background: var(--mainC) top/300px url('../../images/pattern_main.png');
     width: 100%;
     padding-block: 3vh;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     z-index: 1;
+}
+
+header {
+    font-size: 150%;
+    font-weight: 300;
 }
 
 nav {
@@ -47,22 +52,15 @@ nav {
 }
 
 .logo {
-    height: 50px;
-    width: 200px;
-    object-fit: cover;
+    width: 15%;
+    min-width: 140px;
+    margin-right: 5%;
 }
 
 ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #9400E3;
-    flex-flow: wrap;
-}
-
-li {
-    padding-block: 15px;
-    cursor: pointer;
 }
 
 main {
@@ -79,11 +77,22 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column nowrap;
-    background: var(--terC)  top/20% url('../../images/pattern_third.png');
+    flex-flow: wrap;
+    background: var(--terC) top/400px url('../../images/pattern_third.png');
     width: 100vw;
-    height: fit-content;
+    padding-block: 2%;
     text-align: center;
+}
+
+#mainFrame img {
+    width: 10%;
+    min-width: 130px;
+    margin: 10%;
+}
+
+#mainFrame div {
+    width: 36%;
+    min-width: 440px;
 }
 
 #mainFrame h1 {
@@ -102,13 +111,11 @@ main {
     align-items: center;
     flex-flow: row nowrap;
     width: 100%;
-    height: fit-content;
     margin-block: 30px;
 }
 
 h3 {
     background: var(--segC);
-    height: fit-content;
     padding: 2%;
     border-radius: 15px;
     font-size: 340%;
@@ -141,24 +148,21 @@ h3 {
     background: #F0E6EB;
     width: 23%;
     min-width: 280px;
-    margin-block: 1%;
-    margin-inline: 0.8%;
+    margin: 1% 0.8%;
     border-radius: 15px;
 }
 
 .formaBox p {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 130%;
-    font-weight: 1000;
     margin-block: 10%;
+    font: 1000 130% 'Courier New', Courier, monospace;
 }
 
 .formaImage {
     height: 300px;
     width: 80%;
     background: var(--quaC) top/80% url('../../images/pattern_third.png');
-    object-fit: cover;
     margin-top: 10%;
+    object-fit: cover;
 }
 
 .formaBarra {
@@ -172,9 +176,8 @@ h3 {
 #addForma {
     background: var(--terC);
     width: fit-content;
-    min-width: 0;
-    margin-top: 30px;
-    margin-bottom: 10%;
+    min-width: none;
+    margin: 30px 0 10%;
     padding-inline: 2%;
     color: #ffffff;
 }
@@ -186,7 +189,7 @@ h3 {
     justify-content: space-between;
     align-items: center;
     flex-flow: column nowrap;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.5);
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -203,8 +206,7 @@ article {
     background: var(--terC);
     width: 30%;
     min-width: 360px;
-    padding-block: 1%;
-    padding-inline: 2%;
+    padding: 1% 2%;
     border-radius: 15px;
     position: fixed;
     top: 50%;
@@ -219,10 +221,10 @@ article {
     box-shadow: 3px 6px 4px rgba(0, 0, 0, 0.4);
     width: 15%;
     border-radius: 100vw;
-    cursor: pointer;
     position: absolute;
     top: -5%;
     left: -5%;
+    cursor: pointer;
 }
 
 article h1 {
@@ -252,9 +254,8 @@ form div:not(.barra) {
 }
 
 form div p {
-    padding-inline: 6%;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 1000;
+    padding-inline: 5%;
+    font: 1000 100% 'Courier New', Courier, monospace;
     text-align: center;
 }
 
@@ -276,6 +277,7 @@ form div p {
 
 .maisInforma {
     background: var(--quaC) top/30% url('../../images/pattern_second.png');
+    z-index: 4;
 }
 
 article h2 {
@@ -286,52 +288,84 @@ article h2 {
 input {
     width: 100%;
     background: var(--backgC);
-    border: none;
     margin-bottom: 3%;
     padding: 4%;
+    border: none;
     border-radius: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font: 20px Arial, Helvetica, sans-serif;
 }
 
-#buttonCalc {
-    background: var(--mainC);
-    color: #FFFFFF;
+.textoForma {
+    display: none;
+    background: var(--backgC);
+    width: 80%;
+    height: 80%;
+    margin-bottom: 5%;
+    padding: 5%;
+    border-radius: 15px;
+    position: absolute;
+    top: 25px;
+    animation-name: animaAbre;
+    animation-duration: 0.4s;
+}
+
+.textoForma div {
+    overflow-y: scroll;
+    height: 85%;
+}
+
+.comTexto {
+    display: flex;
 }
 
 /*  */
 
-footer div {
+footer nav {
+    flex-flow: column nowrap;
+    gap: 10px;
+    text-align: center;
+}
+
+nav li:not(.redes li) {
+    margin-inline: 10px;
+    border-radius: 100vw;
+    padding: 10px;
+}
+
+.barraFoot {
+    background: #000000;
+    height: 2px;
+    width: 400px;
+    margin-bottom: 1%;
+}
+
+.logoFoot, .redes {
     display: flex;
-    justify-content: space-between;
-    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .logoFoot {
-    width: 50%;
-    background: #F0CF00;
+    flex-flow: column;
+    gap: 20px;
 }
 
-.logoFoot div {
-    background: #000000;
-    height: 50px;
-    width: 2px;
-    margin-left: 20px;
-}
-
-.links {
-    width: 50%;
-    background: #00CFF0;
-}
-
-footer ul img {
+.redes img {
     height: 25px;
+    padding: 10px;
+    border-radius: 100vw;
+}
+
+footer .logo {
+    width: 35%;
 }
 
 /*  */
 
-a:hover {
+nav li:not(.redes li):hover, .redes img:hover {
     cursor: pointer;
+    background: var(--quaC);
+    transition: 0.3s;
 }
 
 .formaBox:not(#addForma):hover {
@@ -341,16 +375,10 @@ a:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-#buttonCalc:hover {
-    transform: scale(1.1);
-    transition: 0.3s;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-}
-
-@media (max-width: 1520px) {
-    footer nav ul:first-of-type {
-        flex-flow: column;
-    }
+.maisInforma:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.4s;
 }
 
 @media (max-width: 1150px) {
@@ -371,11 +399,6 @@ a:hover {
   to {scale: 1;}
 }
 
-@keyframes animaFecha {
-    from {scale: 1;}
-    to {scale: 0.5;}
-}
-
 /* 
 
 Color Palette
@@ -386,5 +409,6 @@ Color Palette
     #F00050 -> Pinkish
     #F0CF00 -> Yellowish
     #00CFF0 -> Blueish
+    #9400E3 -> Purpleish
     'https://mir-s3-cdn-cf.behance.net/project_modules/disp/17f47f20075359.562e517471adb.gif' -> Animated Shape Gifs
 */

@@ -2,9 +2,9 @@
     var formaAtual = [`Círculo`,`Cubo`,`Retangulo`,`Romboedro`,`Trapezoide`,`Poligono`,`Quadrado`,`Cuboide`];
     var nomeForma = document.querySelector('.NomeDaForma');
 
-    var numero = document.getElementById(`numero`);
-    var numero2 = document.getElementById(`numero2`);
-    var numero3 = document.getElementById(`numero3`);
+    var input = document.getElementById(`numero`);
+    var input2 = document.getElementById(`numero2`);
+    var input3 = document.getElementById(`numero3`);
     var formaFormula = document.getElementById(`formaFormula`);
     var formaResult = document.getElementById(`formaResult`);
 //
@@ -20,9 +20,10 @@
         document.querySelector(`article`).style.display = "none";
         document.getElementById(`backForma`).style.display = "none"
         document.querySelector(`body`).style.overflow = "scroll";
-        numero.value = "";
-        numero2.value = "";
-        numero3.value = "";
+        document.getElementById(`textoForma`).style.display = "none";
+        input.value = "";
+        input2.value = "";
+        input3.value = "";
     }
 //
 
@@ -48,83 +49,83 @@
     document.getElementById(`circulo`).onclick = function() {
         nomeForma.innerText = formaAtual[0];
         visivel();
-        numero2.style.display = "none";
-        numero3.style.display = "none";
+        input2.style.display = "none";
+        input3.style.display = "none";
         formaFormula.innerText = "π × r²";
     }
 
     document.getElementById(`cubo`).onclick = function() {
         nomeForma.innerText = formaAtual[1];
         visivel();
-        numero2.style.display = "none";
-        numero3.style.display = "none";
+        input2.style.display = "none";
+        input3.style.display = "none";
         formaFormula.innerText = "6 × l²";
     }
 
     document.getElementById(`retangulo`).onclick = function() {
         nomeForma.innerText = formaAtual[2];
         visivel();
-        numero2.style.display = "block";
-        numero3.style.display = "none";
+        input2.style.display = "block";
+        input3.style.display = "none";
         formaFormula.innerText = "b × h";
     }
 
     document.getElementById(`romboedro`).onclick = function() {
         nomeForma.innerText = formaAtual[3];
         visivel();
-        numero2.style.display = "block";
-        numero3.style.display = "block";
+        input2.style.display = "block";
+        input3.style.display = "block";
         formaFormula.innerText = "(2 × b × h) + (2 × b × d) + (2 × h × d)";
     }
 
     document.getElementById(`trapezoide`).onclick = function() {
         nomeForma.innerText = formaAtual[4];
         visivel();
-        numero2.style.display = "block";
-        numero3.style.display = "block";
-        formaFormula.innerText = "(B + b)/2 × h";
+        input2.style.display = "block";
+        input3.style.display = "block";
+        formaFormula.innerText = "(B + b) × h /2";
     }
 
     document.getElementById(`poligono`).onclick = function() {
         nomeForma.innerText = formaAtual[5];
         visivel();
-        numero2.style.display = "block";
-        numero3.style.display = "block";
+        input2.style.display = "block";
+        input3.style.display = "block";
         formaFormula.innerText = `(n × l /2) × α`;
     }
 
     document.getElementById(`quadrado`).onclick = function() {
         nomeForma.innerText = formaAtual[6];
         visivel();
-        numero2.style.display = "none";
-        numero3.style.display = "none";
+        input2.style.display = "none";
+        input3.style.display = "none";
         formaFormula.innerText = "l × l ou l²";
     }
 
     document.getElementById(`cuboide`).onclick = function() {
         nomeForma.innerText = formaAtual[7];
         visivel();
-        numero2.style.display = "block";
-        numero3.style.display = "block";
-        formaFormula.innerText = "(2 × a × b) + (2 × a × c) + (2 × b × c)";
+        input2.style.display = "block";
+        input3.style.display = "block";
+        formaFormula.innerText = "(2 × b × h) + (2 × b × d) + (2 × h × d)";
     }
 //
 
 // Calcular forma
-    document.getElementById(`numero`).oninput = function() {
+    input.oninput = function() {
         calcForma();
     }
-    document.getElementById(`numero2`).oninput = function() {
+    input2.oninput = function() {
         calcForma();
     }
-    document.getElementById(`numero3`).oninput = function() {
+    input3.oninput = function() {
         calcForma();
     }
 
     function calcForma() {
-        var valor = Number(numero.value);
-        var valor2 = Number(numero2.value);
-        var valor3 = Number(numero3.value);
+        var valor = Number(input.value);
+        var valor2 = Number(input2.value);
+        var valor3 = Number(input3.value);
         var resultado = 0;
 
         if (valor > 0) {
@@ -142,7 +143,7 @@
                     resultado = (2 * valor * valor2) + (2 * valor * valor3) + (2 * valor2 * valor3);
                     break;
                 case formaAtual[4]:
-                    resultado = (valor + valor2)/2 * valor3;
+                    resultado = (valor + valor2) * valor3 /2;
                     break;
                 case formaAtual[5]:
                     resultado = (valor * valor2 /2) * valor3 + `\nNessa forma há ${valor} triângulos`;
@@ -154,11 +155,24 @@
                     break;
             };
 
-            formaResult.innerText = resultado
-        } else if (valor == ``) {
-            formaResult.innerText = 'O resultado aparece aqui';
+            formaResult.innerText = resultado;
         } else {
-            formaResult.innerText = 'Informe apenas números acima de 0';
+            formaResult.innerText = 'O resultado aparece aqui';
+        }
+    }
+//
+
+// Abre e fecha bloco de informações
+    var textoForma = document.querySelector(`.textoForma`);
+    var maisInforma = document.querySelector(`.maisInforma`);
+
+    maisInforma.onclick = function (){
+        textoForma.classList.toggle(`comTexto`);
+
+        if(textoForma.classList == "textoForma"){
+            maisInforma.innerHTML = "<h2>Saiba mais da figura</h2>";
+        } else {
+            maisInforma.innerHTML = "<h2>Voltar ao cálculo</h2>";
         }
     }
 //
