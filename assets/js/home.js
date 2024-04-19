@@ -14,6 +14,11 @@
         document.querySelector(`article`).style.display = "flex";
         document.getElementById(`backForma`).style.display = "flex"
         document.querySelector(`body`).style.overflow = "hidden";
+        input.value = "";
+        input2.value = "";
+        input3.value = "";
+        formaResult.innerText = "O resultado aparece aqui";
+        textoForma.classList = "textoForma";
     }
 
     function invisible() {
@@ -21,9 +26,6 @@
         document.getElementById(`backForma`).style.display = "none"
         document.querySelector(`body`).style.overflow = "scroll";
         document.getElementById(`textoForma`).style.display = "none";
-        input.value = "";
-        input2.value = "";
-        input3.value = "";
     }
 //
 
