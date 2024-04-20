@@ -6,6 +6,7 @@
     --segC: #00CFF0;
     --terC: #9400E3;
     --quaC: #F0CF00;
+    --boxC: #F0E6EB; 
 }
 
 * {
@@ -32,8 +33,8 @@ body {
 header, footer {
     display: flex;
     justify-content: center;
-    background: var(--mainC) top/300px url('../../images/pattern_main.png');
     width: 100%;
+    background: var(--mainC) top/300px url('../../images/pattern_main.png');
     padding-block: 3vh;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     z-index: 1;
@@ -67,9 +68,9 @@ main {
     display: flex;
     align-items: center;
     flex-flow: column nowrap;
-    background: var(--backgC);
     width: 80%;
     max-width: 1230px;
+    background: var(--backgC);
     padding-inline: 2%;
 }
 
@@ -78,16 +79,16 @@ main {
     justify-content: center;
     align-items: center;
     flex-flow: wrap;
-    background: var(--terC);
     width: 100vw;
-    padding-block: 2%;
+    background: var(--terC) left bottom/450px url("../../images/mainframe_1.png") no-repeat;
+    padding-block: 2.5%;
     text-align: center;
 }
 
 #mainFrame img {
     width: 10%;
     min-width: 130px;
-    margin: 9%;
+    padding: 9%;
 }
 
 #mainFrame div {
@@ -96,12 +97,12 @@ main {
 }
 
 #mainFrame h1 {
-    font-size: 440%;
+    font-size: 600%;
     font-weight: 900;
 }
 
 #mainFrame h2 {
-    font-size: 180%;
+    font-size: 230%;
     font-weight: 800;
 }
 
@@ -122,9 +123,9 @@ h3 {
 }
 
 .mainBarra {
-    background: #000000;
     min-width: 8px;
     height: 100%;
+    background: #000000;
     margin-right: 16px;
     border-radius: 100vw;
 }
@@ -135,9 +136,9 @@ h3 {
     align-items: center;
     flex-flow: row wrap;
     background: var(--mainC) top/250px url('../../images/pattern_mainforma.png');
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     padding: 0.8%;
     border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .formaBox {
@@ -145,9 +146,9 @@ h3 {
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
-    background: #F0E6EB;
     width: 23%;
     min-width: 280px;
+    background: var(--boxC);
     margin: 1% 0.8%;
     border-radius: 15px;
 }
@@ -166,32 +167,29 @@ h3 {
 }
 
 .formaBarra {
-    background: var(--terC);
     height: 6px;
     width: 70%;
+    background: var(--terC);
     margin-top: 5%;
     border-radius: 100vw;
 }
 
 #addForma {
-    background: var(--terC);
     width: fit-content;
     min-width: none;
-    margin: 30px 0 10%;
+    background: var(--terC);
     padding-inline: 2%;
-    color: #ffffff;
+    margin: 30px 0 10%;
+    color: var(--boxC);
 }
 
 /*  */
 
 #backForma {
     display: none;
-    justify-content: space-between;
-    align-items: center;
-    flex-flow: column nowrap;
-    background: rgba(0, 0, 0, 0.5);
     width: 100vw;
     height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     left: 0;
@@ -203,24 +201,24 @@ article {
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
-    background: var(--terC);
     width: 30%;
     min-width: 360px;
+    background: var(--terC);
     padding: 1% 2%;
     border-radius: 15px;
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 3;
+    transform: translate(-50%, -50%);
     animation-name: animaAbre;
     animation-duration: 0.4s
 }
 
 #closeForma {
-    box-shadow: 3px 6px 4px rgba(0, 0, 0, 0.4);
     width: 15%;
     border-radius: 100vw;
+    box-shadow: 3px 6px 4px rgba(0, 0, 0, 0.4);
     position: absolute;
     top: -5%;
     left: -5%;
@@ -232,6 +230,11 @@ article h1 {
     margin-block: 5%;
     font-size: 30px;
     font-weight: 900;
+}
+
+article h2 {
+    font-weight: 900;
+    font-size: 25px;
 }
 
 form {
@@ -248,8 +251,8 @@ form div:not(.barra) {
     align-items: center;
     flex-flow: column nowrap;
     width: 100%;
-    margin-bottom: 5%;
     padding-block: 5%;
+    margin-bottom: 5%;
     border-radius: 15px;
 }
 
@@ -260,9 +263,9 @@ form div p {
 }
 
 .barra {
-    background: var(--backgC);
     height: 2px;
     width: 90%;
+    background: var(--backgC);
     margin-top: 3%;
     border-radius: 100vw;
 }
@@ -280,16 +283,11 @@ form div p {
     z-index: 4;
 }
 
-article h2 {
-    font-weight: 900;
-    font-size: 25px;
-}
-
 input {
     width: 100%;
     background: var(--backgC);
-    margin-bottom: 3%;
     padding: 4%;
+    margin-bottom: 3%;
     border: none;
     border-radius: 5px;
     font: 20px Arial, Helvetica, sans-serif;
@@ -297,21 +295,24 @@ input {
 
 .textoForma {
     display: none;
-    background: var(--quaC);
     width: 80%;
     height: 80%;
-    margin-bottom: 5%;
+    background: var(--quaC);
     padding: 5%;
+    margin-bottom: 5%;
     border-radius: 15px;
     position: absolute;
-    top: 25px;
+    bottom: -2%;
     animation-name: animaAbre;
     animation-duration: 0.4s;
 }
 
 .textoForma div {
-    overflow-y: scroll;
     height: 85%;
+    padding-right: 5%;
+    text-align: justify;
+    font: 1000 100% 'Courier New', Courier, monospace;
+    overflow-y: scroll;
 }
 
 .comTexto {
@@ -327,15 +328,15 @@ footer nav {
 }
 
 nav li:not(.redes li) {
+    padding: 10px;
     margin-inline: 10px;
     border-radius: 100vw;
-    padding: 10px;
 }
 
 .barraFoot {
-    background: #000000;
     height: 2px;
     width: 400px;
+    background: #000000;
     margin-bottom: 1%;
 }
 
@@ -404,17 +405,3 @@ nav li:not(.redes li):hover, .redes img:hover {
   from {scale: 0.5;}
   to {scale: 1;}
 }
-
-/* 
-
-Color Palette
-    #CBBBC0 -> Greyish
-    #DCD7E6 -> Greyish 2
-    #CDC3CD -> Greyish 3
-    #EBF0F5 -> Greyish 4
-    #F00050 -> Pinkish
-    #F0CF00 -> Yellowish
-    #00CFF0 -> Blueish
-    #9400E3 -> Purpleish
-    'https://mir-s3-cdn-cf.behance.net/project_modules/disp/17f47f20075359.562e517471adb.gif' -> Animated Shape Gifs
-*/
