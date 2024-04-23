@@ -1,12 +1,13 @@
 // Global var
-    var formaAtual = [`Círculo`,`Cubo`,`Retangulo`,`Romboedro`,`Trapezoide`,`Poligono`,`Quadrado`,`Cuboide`];
+    var forma = document.querySelectorAll('.formaBox');
     var nomeForma = document.querySelector('.NomeDaForma');
-
-    var input = document.getElementById(`numero`);
-    var input2 = document.getElementById(`numero2`);
-    var input3 = document.getElementById(`numero3`);
+    var numero = document.getElementById(`numero`);
+    var numero2 = document.getElementById(`numero2`);
+    var numero3 = document.getElementById(`numero3`);
     var formaFormula = document.getElementById(`formaFormula`);
     var formaResult = document.getElementById(`formaResult`);
+    var textoForma = document.querySelector(`.textoForma`);
+    var maisInforma = document.querySelector(`.maisInforma`);
 //
 
 // Display
@@ -14,9 +15,9 @@
         document.querySelector(`article`).style.display = "flex";
         document.getElementById(`backForma`).style.display = "flex"
         document.querySelector(`body`).style.overflow = "hidden";
-        input.value = "";
-        input2.value = "";
-        input3.value = "";
+        numero.value = "";
+        numero2.value = "";
+        numero3.value = "";
         formaResult.innerText = "O resultado aparece aqui";
         maisInforma.innerHTML = "<h2>Saiba mais da figura</h2>";
         textoForma.classList = "textoForma";
@@ -34,148 +35,68 @@
         invisible();
     }
 
-    window.onkeydown = function(event) {
-        if (event.keyCode == 27 && document.querySelector(`article`).style.display == "flex") {
+    window.onkeydown = function(clique) {
+        if (clique.keyCode == 27 && document.querySelector(`article`).style.display == "flex") {
             invisible();
         }
     }
 
-    window.onclick = function(event) {
-        if (event.target == document.getElementById(`backForma`)) {
+    window.onclick = function(clique) {
+        if (clique.target == document.getElementById(`backForma`)) {
             invisible();
         }
     }
 //
 
-// Abrir aba de calculo
-    document.getElementById(`circulo`).onclick = function() {
-        nomeForma.innerText = formaAtual[0];
+// Abrir aba de cálculo
+    forma.forEach((aoClicar) =>
+        aoClicar.onclick = function () {
+            var idFormaClick = this.id;
+            abreForma(idFormaClick);
+        }
+    );
+    
+    function abreForma(idForma) {
+        var objetos = formaGeral.find((item) => item.nome == idForma);
+        
+        nomeForma.innerText = objetos.nome;
         visivel();
-        input2.style.display = "none";
-        input3.style.display = "none";
-        formaFormula.innerText = "π × r²";
-        textoForma.querySelector(`div`).innerText = descriForma[0];
-    }
-
-    document.getElementById(`cubo`).onclick = function() {
-        nomeForma.innerText = formaAtual[1];
-        visivel();
-        input2.style.display = "none";
-        input3.style.display = "none";
-        formaFormula.innerText = "6 × l²";
-        textoForma.querySelector(`div`).innerText = descriForma[1];
-    }
-
-    document.getElementById(`retangulo`).onclick = function() {
-        nomeForma.innerText = formaAtual[2];
-        visivel();
-        input2.style.display = "block";
-        input3.style.display = "none";
-        formaFormula.innerText = "b × h";
-        textoForma.querySelector(`div`).innerText = descriForma[2];
-    }
-
-    document.getElementById(`romboedro`).onclick = function() {
-        nomeForma.innerText = formaAtual[3];
-        visivel();
-        input2.style.display = "block";
-        input3.style.display = "block";
-        formaFormula.innerText = "(2 × b × h) + (2 × b × w) + (2 × h × w)";
-        textoForma.querySelector(`div`).innerText = descriForma[3];
-    }
-
-    document.getElementById(`trapezoide`).onclick = function() {
-        nomeForma.innerText = formaAtual[4];
-        visivel();
-        input2.style.display = "block";
-        input3.style.display = "block";
-        formaFormula.innerText = "(B + b) × h /2";
-        textoForma.querySelector(`div`).innerText = descriForma[4];
-    }
-
-    document.getElementById(`poligono`).onclick = function() {
-        nomeForma.innerText = formaAtual[5];
-        visivel();
-        input2.style.display = "block";
-        input3.style.display = "block";
-        formaFormula.innerText = `(n × l /2) × α`;
-        textoForma.querySelector(`div`).innerText = descriForma[5];
-    }
-
-    document.getElementById(`quadrado`).onclick = function() {
-        nomeForma.innerText = formaAtual[6];
-        visivel();
-        input2.style.display = "none";
-        input3.style.display = "none";
-        formaFormula.innerText = "l × l ou l²";
-        textoForma.querySelector(`div`).innerText = descriForma[6];
-    }
-
-    document.getElementById(`cuboide`).onclick = function() {
-        nomeForma.innerText = formaAtual[7];
-        visivel();
-        input2.style.display = "block";
-        input3.style.display = "block";
-        formaFormula.innerText = "(2 × b × h) + (2 × b × w) + (2 × h × w)";
-        textoForma.querySelector(`div`).innerText = descriForma[7];
-    }
-//
-
-// Calcular forma
-    input.oninput = function() {
-        calcForma();
-    }
-    input2.oninput = function() {
-        calcForma();
-    }
-    input3.oninput = function() {
-        calcForma();
+        numero2.style.display = objetos.nume == 1 || objetos.nume == 2 ? 'block' : 'none';
+        numero3.style.display = objetos.nume == 2 ? 'block' : 'none';
+        formaFormula.innerText = objetos.formula;
+        textoForma.querySelector(`div`).innerText = objetos.texto;
+        document.querySelectorAll(`input`).forEach((e) =>
+            e.oninput = function() {
+                calcForma();
+        });
     }
 
     function calcForma() {
-        var valor = Number(input.value);
-        var valor2 = Number(input2.value);
-        var valor3 = Number(input3.value);
-        var resultado = 0;
+        var valor = Number(numero.value);
+        var valor2 = Number(numero2.value);
+        var valor3 = Number(numero3.value);
+                
+        var puxada = formaGeral.find((objeto) => objeto.nome == nomeForma.innerText);
+        var resultado = puxada.area(valor, valor2, valor3);
 
-        if (valor) {
-            switch(nomeForma.innerHTML) {
-                case formaAtual[0]:
-                    resultado = `≈` + (Math.PI * (valor ** 2)).toFixed(2);
-                    break;
-                case formaAtual[1]:
-                    resultado = 6 * (valor ** 2);
-                    break;
-                case formaAtual[2]:
-                    resultado = valor * valor2;
-                    break;
-                case formaAtual[3], formaAtual[7]:
-                    resultado = (2 * valor * valor2) + (2 * valor * valor3) + (2 * valor2 * valor3);
-                    break;
-                case formaAtual[4]:
-                    resultado = (valor + valor2) * valor3 /2;
-                    break;
-                case formaAtual[5]:
-                    resultado = (valor * valor2 /2) * valor3 + `\nNessa forma há ${valor} triângulos`;
-                    break;
-                case formaAtual[6]:
-                    resultado = valor ** 2
-                    break;
-                default:
-                    break;
-            };
+        // document.querySelectorAll(`input`).forEach((mostra) =>
+        //     // console.log(mostra.value)
+        //     formaResult.innerText = mostra.value > 0 ? resultado : `O resultado aparece aqui`
+        // );
 
-            formaResult.innerText = resultado;
+        if (valor > 0 && puxada.nume == 0) {
+            formaResult.innerText = resultado
+        } else if (valor > 0 && valor2 > 0 && puxada.nume == 1) {
+            formaResult.innerText = resultado
+        } else if (valor > 0 && valor2 > 0 && valor3 > 0 && puxada.nume == 2) {
+            formaResult.innerText = resultado
         } else {
-            formaResult.innerText = 'O resultado aparece aqui';
-        }
+            formaResult.innerText = `O resultado aparece aqui`
+        };
     }
 //
 
 // Abre e fecha bloco de informações
-    var textoForma = document.querySelector(`.textoForma`);
-    var maisInforma = document.querySelector(`.maisInforma`);
-
     maisInforma.onclick = function (){
         textoForma.classList.toggle(`comTexto`);
 
@@ -187,7 +108,66 @@
     }
 //
 
-// Informação em texto sobre as formas
+// Arrays
+var formaGeral = [
+    {
+        nome: 'circulo',
+        nume: 0,
+        formula: "π × r²",
+        texto: `socorro`,
+        area: function(valor) { return `≈` + ((Math.PI * (valor ** 2))).toFixed(2)}
+    },
+    {
+        nome: 'cubo',
+        nume: 0,
+        formula: "6 × l²",
+        texto: `socuero`,
+        area: function(valor) { return 6 * (valor ** 2)}
+    },
+    {
+        nome: 'retangulo',
+        nume: 1,
+        formula: "b × h",
+        texto: `socoorro`,
+        area: function(valor, valor2) { return valor * valor2}
+    },
+    {
+        nome: 'romboedro',
+        nume: 2,
+        formula: "(2 × b × h) + (2 × b × w) + (2 × h × w)",
+        texto: `socoorro`,
+        area: function(valor, valor2, valor3) { return (2 * valor * valor2) + (2 * valor * valor3) + (2 * valor2 * valor3)}
+    },
+    {
+        nome: 'trapezoide',
+        nume: 2,
+        formula: "(B + b) × h /2",
+        texto: `socoorro`,
+        area: function(valor, valor2, valor3) { return (valor + valor2) * valor3 /2}
+    },
+    {
+        nome: 'poligono',
+        nume: 2,
+        formula: "(n × l /2) × α",
+        texto: `socoorro`,
+        area: function(valor, valor2, valor3) { return (valor * valor2 /2) * valor3}
+    },
+    {
+        nome: 'quadrado',
+        nume: 0,
+        formula: "l × l ou l²",
+        texto: `socoorro`,
+        area: function(valor) { return valor ** 2}
+    },
+    {
+        nome: 'cuboide',
+        nume: 2,
+        formula: "(2 × b × h) + (2 × b × w) + (2 × h × w)",
+        texto: `socoorro`,
+        area: function(valor, valor2, valor3) { return (2 * valor * valor2) + (2 * valor * valor3) + (2 * valor2 * valor3)}
+    }
+]
+
 var descriForma = [
     `O círculo é uma das formas geométricas mais básicas e comuns na matemática e no mundo ao nosso redor. É a forma perfeita, sem início nem fim, e é frequentemente associado à harmonia e à unidade.\n\nUm círculo é definido como o conjunto de todos os pontos em um plano que estão a uma distância constante, conhecida como raio, de um ponto fixo chamado centro. A linha que conecta todos esses pontos é chamada de circunferência.\n\nA circunferência de um círculo é a medida do contorno do círculo. A fórmula para calcular a circunferência é C=2πr, onde "r" é o raio do círculo e π (Pi) é uma constante cujo valor é aproximadamente 3.14159.\n\nO círculo também tem várias propriedades interessantes. Por exemplo, de todas as formas com uma dada circunferência, o círculo tem a maior área. Além disso, de todas as formas com uma determinada área, o círculo tem a menor circunferência.\n\nEm resumo, o círculo é uma forma geométrica fascinante e fundamental com uma riqueza de propriedades e aplicações em diversas áreas, desde a matemática pura até a física, a engenharia e além.`,
 
@@ -205,5 +185,4 @@ var descriForma = [
 
     `Um cuboide é uma das formas geométricas tridimensionais mais comuns e amplamente reconhecidas. É um sólido com seis faces, também conhecido como paralelepípedo retângulo, com características específicas.\n\nUm cuboide é definido como um sólido com seis faces retangulares, onde todas as faces se encontram em ângulos retos. Isso significa que cada par de faces opostas no cuboide é idêntico e paralelo. Além disso, todas as arestas (onde duas faces se encontram) de um cuboide são retas.\n\nO cuboide tem seis faces, doze arestas e oito vértices. Os vértices são os pontos onde três arestas se encontram.\n\nO volume de um cuboide é dado pela fórmula V=lwh, onde "l" é o comprimento, "w" é a largura e "h" é a altura do cuboide. Isso ocorre porque o volume é a quantidade de espaço tridimensional que o cuboide ocupa, que é o produto do comprimento, largura e altura.\n\nEm resumo, o cuboide é uma forma geométrica tridimensional fundamental com uma riqueza de propriedades e aplicações em diversas áreas, desde a matemática pura até a física, a engenharia e além. É uma forma simples, mas poderosa, que é a base para muitas estruturas e objetos no mundo real.`
 ]
-
 //

@@ -116,7 +116,7 @@ main {
 }
 
 h3 {
-    background: var(--segC) top/20% url("../../images/pattern_second.png");
+    background: var(--segC) top/250px url("../../images/pattern_forth.png");
     padding: 2%;
     border-radius: 15px;
     font-size: 340%;
