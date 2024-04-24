@@ -9,12 +9,9 @@
     --boxC: #F0E6EB; 
 }
 
-* {
-    margin: 0;
+*, a, ul {
     padding: 0;
-}
-
-a, ul {
+    margin: 0;
     text-decoration: none;
     list-style: none;
 }
@@ -27,7 +24,7 @@ body {
     width: 100vw;
     height: 100vh;
     background: var(--mainC) url('../../images/pattern_backg.png');
-    font: 400 100% 'Lilita One', Arial, sans-serif;
+    font: 400 1rem 'Lilita One', Arial, sans-serif;
 }
 
 header, footer {
@@ -35,13 +32,13 @@ header, footer {
     justify-content: center;
     width: 100%;
     background: var(--mainC) top/300px url('../../images/pattern_main.png');
-    padding-block: 3vh;
+    padding: 3vh 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     z-index: 1;
 }
 
 header {
-    font-size: 150%;
+    font-size: 1.5rem;
 }
 
 nav {
@@ -71,7 +68,7 @@ main {
     width: 80%;
     max-width: 1230px;
     background: var(--backgC);
-    padding-inline: 2%;
+    padding: 0 2%;
 }
 
 #mainFrame {
@@ -81,7 +78,7 @@ main {
     flex-flow: wrap;
     width: 100vw;
     background: var(--terC) left bottom/450px url("../../images/mainframe_1.png") no-repeat;
-    padding-block: 2.5%;
+    padding: 2.5% 0;
     text-align: center;
 }
 
@@ -97,12 +94,12 @@ main {
 }
 
 #mainFrame h1 {
-    font-size: 600%;
+    font-size: 6rem;
     font-weight: 900;
 }
 
 #mainFrame h2 {
-    font-size: 230%;
+    font-size: 2.3rem;
     font-weight: 800;
 }
 
@@ -119,7 +116,7 @@ h3 {
     background: var(--segC) top/250px url("../../images/pattern_forth.png");
     padding: 2%;
     border-radius: 15px;
-    font-size: 340%;
+    font-size: 3.4rem;
 }
 
 .mainBarra {
@@ -155,7 +152,7 @@ h3 {
 
 .formaBox p {
     margin-block: 10%;
-    font: 1000 130% 'Courier New', Courier, monospace;
+    font: 1000 1.3rem 'Courier New', Courier, monospace;
 }
 
 .formaImage {
@@ -178,148 +175,10 @@ h3 {
     width: fit-content;
     min-width: none;
     background: var(--terC);
-    padding-inline: 2%;
+    padding: 0 2%;
     margin: 30px 0 10%;
     color: var(--boxC);
 }
-
-/*  */
-
-#backForma {
-    display: none;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
-}
-
-article {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column nowrap;
-    width: 30%;
-    min-width: 360px;
-    background: var(--terC);
-    padding: 1% 2%;
-    border-radius: 15px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 3;
-    transform: translate(-50%, -50%);
-    animation-name: animaAbre;
-    animation-duration: 0.4s
-}
-
-#closeForma {
-    width: 15%;
-    border-radius: 100vw;
-    box-shadow: 3px 6px 4px rgba(0, 0, 0, 0.4);
-    position: absolute;
-    top: -5%;
-    left: -5%;
-    cursor: pointer;
-}
-
-article h1 {
-    width: 86%;
-    margin-block: 5%;
-    font-size: 30px;
-    font-weight: 900;
-}
-
-article h2 {
-    font-weight: 900;
-    font-size: 25px;
-}
-
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column nowrap;
-    width: 80%;
-}
-
-form div:not(.barra) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column nowrap;
-    width: 100%;
-    padding-block: 5%;
-    margin-bottom: 5%;
-    border-radius: 15px;
-}
-
-form div p {
-    padding-inline: 5%;
-    font: 1000 100% 'Courier New', Courier, monospace;
-    text-align: center;
-}
-
-.barra {
-    height: 2px;
-    width: 90%;
-    background: var(--backgC);
-    margin-top: 3%;
-    border-radius: 100vw;
-}
-
-.mostraConta {
-    margin-top: 5%;
-}
-
-.mostraConta, .mostraResult {
-    background: var(--segC) top/30% url('../../images/pattern_second.png');
-}
-
-.maisInforma {
-    background: var(--quaC) top/30% url('../../images/pattern_second.png');
-    z-index: 4;
-}
-
-input {
-    width: 100%;
-    background: var(--backgC);
-    padding: 4%;
-    margin-bottom: 3%;
-    border: none;
-    border-radius: 5px;
-    font: 20px Arial, Helvetica, sans-serif;
-}
-
-.textoForma {
-    display: none;
-    width: 80%;
-    height: 80%;
-    background: var(--quaC);
-    padding: 5%;
-    margin-bottom: 5%;
-    border-radius: 15px;
-    position: absolute;
-    bottom: -2%;
-    animation-name: animaAbre;
-    animation-duration: 0.4s;
-}
-
-.textoForma div {
-    height: 85%;
-    padding-right: 5%;
-    text-align: justify;
-    font: 1000 100% 'Courier New', Courier, monospace;
-    overflow-y: scroll;
-}
-
-.comTexto {
-    display: flex;
-}
-
-/*  */
 
 footer nav {
     flex-flow: column nowrap;
@@ -361,7 +220,7 @@ footer .logo {
     width: 35%;
 }
 
-/*  */
+/* :hover geral */
 
 nav li:not(.redes li):hover, .redes img:hover {
     cursor: pointer;
@@ -393,11 +252,11 @@ nav li:not(.redes li):hover, .redes img:hover {
 @media (max-width: 735px) {
     #formaContainer {
         width: min-content;
-        padding-inline: 20px;
+        padding: 0 20px;
     }
 
     header {
-        font-size: 110%;
+        font-size: 1.1rem;
     }
 }
 

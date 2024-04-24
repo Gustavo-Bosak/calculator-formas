@@ -1,0 +1,133 @@
+#backForma {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+article {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    width: 30%;
+    min-width: 360px;
+    background: var(--terC);
+    padding: 1% 2%;
+    border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+    animation-name: animaAbre;
+    animation-duration: 0.4s
+}
+
+#closeForma {
+    width: 15%;
+    border-radius: 100vw;
+    box-shadow: 3px 6px 4px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    cursor: pointer;
+}
+
+article h1 {
+    width: 86%;
+    margin-block: 5%;
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+article h2 {
+    font-weight: 900;
+    font-size: 1.55rem;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    width: 80%;
+}
+
+form div:not(.barra) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    width: 100%;
+    padding: 5%;
+    margin-bottom: 5%;
+    border-radius: 15px;
+}
+
+form div p {
+    padding: 0 5%;
+    font: 1000 1rem 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.barra {
+    height: 2px;
+    width: 90%;
+    background: var(--backgC);
+    margin-top: 3%;
+    border-radius: 100vw;
+}
+
+.mostraConta {
+    margin-top: 5%;
+}
+
+.mostraConta, .mostraResult {
+    background: var(--segC) top/30% url('../../images/pattern_second.png');
+}
+
+.maisInforma {
+    background: var(--quaC) top/30% url('../../images/pattern_second.png');
+    z-index: 4;
+}
+
+input {
+    width: 100%;
+    background: var(--backgC);
+    padding: 4%;
+    margin-bottom: 3%;
+    border: none;
+    border-radius: 5px;
+    font: 1.25rem Arial, Helvetica, sans-serif;
+}
+
+.textoForma {
+    display: none;
+    width: 80%;
+    height: 80%;
+    background: var(--quaC);
+    padding: 5%;
+    margin-bottom: 5%;
+    border-radius: 15px;
+    position: absolute;
+    bottom: -2%;
+    animation-name: animaAbre;
+    animation-duration: 0.4s;
+}
+
+.textoForma div {
+    height: 85%;
+    padding-right: 5%;
+    text-align: justify;
+    font: 1000 1rem 'Courier New', Courier, monospace;
+    overflow-y: scroll;
+}
+
+.comTexto {
+    display: flex;
+}
