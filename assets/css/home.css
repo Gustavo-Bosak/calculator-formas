@@ -188,13 +188,14 @@ footer nav {
 
 nav li:not(.redes li) {
     padding: 10px;
-    margin-inline: 10px;
+    margin-inline: 1vw;
     border-radius: 100vw;
 }
 
 .barraFoot {
     height: 2px;
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     background: #000000;
     margin-bottom: 1%;
 }
@@ -256,7 +257,19 @@ nav li:not(.redes li):hover, .redes img:hover {
     }
 
     header {
-        font-size: 1.1rem;
+        font-size: 4.5vmin
+    }
+
+    #mainFrame div {
+        min-width: 300px
+    }
+
+    #mainFrame div h1 {
+        font-size: 13vmin;
+    }
+
+    h3 {
+        font-size: 8vmin;
     }
 }
 
