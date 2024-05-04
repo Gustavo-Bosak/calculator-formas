@@ -1,128 +1,385 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-Br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calcule áreas de várias figuras planas e geométricas, incluindo círculos, cubos, quadrados e muito mais. Online e gratuito.">
-    <meta name="keywords" content="Formino, área, figuras geométricas, figuras planas, matemática, calculadora de área">
-    <meta name="author" content="Formino Team">
-    <link rel="stylesheet" href="./assets/css/home.css">
-    <link rel="stylesheet" href="./assets/css/calculador.css">
-    <link rel="shortcut icon" href="./images/logo_short.png" type="image/x-icon">
-    <title>Formino | Calcule áreas em qualquer área</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <img src="./images/logo.png" class="logo" alt="A palavra Formino estilizada com formas geométricas."/>
-            <ul>
-                <li><a>Home</a></li>
-                <li><a>Sobre</a></li>
-                <li><a>Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div id="mainFrame">
-            <div>
-                <h1>Boas vindas ao Formino!</h1>
-                <h2>Calcule áreas em qualquer área</h2>
-            </div>
-            <img src="./images/maingif_mini.gif" alt="Gif de figuras geométricas alternando entre si.">
-        </div>
-        <div class="formaTitle">
-            <span class="mainBarra"></span>
-            <h3>Escolha uma forma para começar a aventura!</h3>
-        </div>
-        <div id="formaContainer">
-            <div id="circulo" class="formaBox">
-                <img src="./images/circulo.png" class="formaImage" alt="Imagem de um círculo.">
-                <div class="formaBarra"></div>
-                <p>Calcular Círculo</p>
-            </div>
-            <div id="cubo" class="formaBox">
-                <img src="./images/cubo.png" class="formaImage" alt="Imagem de um cubo.">
-                <div class="formaBarra"></div>
-                <p>Calcular Cubo</p>
-            </div>
-            <div id="retangulo" class="formaBox">
-                <img src="./images/retangulo.png" class="formaImage" alt="Imagem de um retângulo.">
-                <div class="formaBarra"></div>
-                <p>Calcular Retangulo</p>
-            </div>
-            <div id="romboedro" class="formaBox">
-                <img src="./images/romboedro.png" class="formaImage" alt="Imagem de um romboedro.">
-                <div class="formaBarra"></div>
-                <p>Calcular Romboedro</p>
-            </div>
-            <div id="trapezoide" class="formaBox">
-                <img src="./images/trapezoide.png" class="formaImage" alt="Imagem de um trapezoide.">
-                <div class="formaBarra"></div>
-                <p>Calcular Trapezoide</p>
-            </div>
-            <div id="poligono" class="formaBox">
-                <img src="./images/poligono.png" class="formaImage" alt="Imagem de um polígono, especificamente um octagono.">
-                <div class="formaBarra"></div>
-                <p>Calcular Polígono</p>
-            </div>
-            <div id="quadrado" class="formaBox">
-                <img src="./images/quadrado.png" class="formaImage" alt="Imagem de um quadrado.">
-                <div class="formaBarra"></div>
-                <p>Calcular Quadrado</p>
-            </div>
-            <div id="cuboide" class="formaBox">
-                <img src="./images/cuboide.png" class="formaImage" alt="Imagem de um cuboide.">
-                <div class="formaBarra"></div>
-                <p>Calcular Cubóide</p>
-            </div>
-        </div>
-        <div id="addForma" class="formaBox"><p>+ Mais Formas Por Vir +</p></div>
-        <article>
-            <img src="./images/close.png" id="closeForma"/>
-            <h1>Calculo da área do <span class="NomeDaForma"></span></h1>
-            <form>
-                <input type="number" id="numero" placeholder="Informe o primeiro valor" pattern="[0-9]+$" min="0"/>
-                <input type="number" id="numero2" placeholder="Informe o segundo valor" pattern="[0-9]+$" min="0"/>
-                <input type="number" id="numero3" placeholder="Informe o terceito valor" pattern="[0-9]+$" min="0"/>
-                <div class="barra"></div>
-                <div class="mostraConta">
-                    <h2>Fórmula Utilizada</h2>
-                    <p id="formaFormula"></p>
-                </div>
-                <div class="mostraResult">
-                    <h2>Resultado</h2>
-                    <p id="formaResult"></p>
-                </div>
-                <div class="maisInforma">
-                    <h2>Saiba mais da figura</h2>
-                </div>
-            </form>
-            <div class="textoForma">
-                <div>texto</div>
-            </div>
-        </article>
-        <div id="backForma"></div>
-    </main>
-    <footer>
-        <nav>
-            <ul class="redes">
-                <li><a><img src="./images/facebook.svg" alt="Íncone da rede social Facebook."/></a></li>
-                <li><a><img src="./images/instagram.svg" alt="Íncone da rede social Instagram."/></a></li>
-                <li><a><img src="./images/twitter.svg" alt="Íncone da rede social Twitter."/></a></li>
-                <li><a><img src="./images/youtube.svg" alt="Íncone da rede social YouTube."/></a></li>
-            </ul>
-            <div class="logoFoot">
-                <img src="./images/logo.png" class="logo" alt="A palavra Formino estilizada com formas geométricas."/>
-                <p>© 2024 Formino. Todos os Direitos Reservados</p>
-            </div>
-            <div class="barraFoot"></div>
-            <ul>
-                <li><a>Termos e Condições</a></li>
-                <li><a>Política de Privacidade</a></li>
-            </ul>
-        </nav>
-    </footer>
+	<title>Gustavo Bosak: Mapa de Carreira</title>
 
-    <script src="./assets/js/home.js"></script>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Mapa de carreira de Gustavo Bosak Santos, profissional da área de Tecnologia da Informação (TI).">
+	<meta name="author" content="Gustavo Bosak Santos">
+	<link rel="shortcut icon" href="./assets/images/map-svgrepo-com.svg">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+	<!-- FontAwesome JS-->
+	<script defer src="assets/fontawesome/js/all.min.js"></script>
+
+	<!-- Theme CSS -->
+	<link id="theme-style" rel="stylesheet" href="assets/css/bootstrap-4.css">
+
+</head>
+
+<body>
+
+	<article class="resume-wrapper text-center position-relative">
+		<div class="resume-wrapper-inner mx-auto text-start bg-white shadow-lg">
+			<header class="resume-header pt-4 pt-md-0">
+				<div class="row">
+					<div class="col-block col-md-auto resume-picture-holder text-center text-md-start">
+						<img class="picture" src="./assets/images/profile.png" alt="Foto de rosto de Gustavo Bosak Santos">
+					</div>
+					<div class="col">
+						<div class="row p-4 justify-content-center justify-content-md-between">
+							<div class="primary-info col-auto">
+								<h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">Gustavo Bosak</h1>
+								<div class="title mb-3">Estudante em Desenvolvimento Web</div>
+								<ul class="list-unstyled">
+									<li class="mb-2">
+										<a class="text-link" href="mailto:gustavobosaksantos@gmail.com" target="_blank">
+											<i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i> gustavobosaksantos@gmail.com
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="secondary-info col-auto mt-2">
+								<ul class="resume-social list-unstyled">
+									<li class="mb-3">
+										<a class="text-link" href="https://www.linkedin.com/in/gustavo-bosak-santos" target="_blank">
+											<span class="fa-container text-center me-2">
+												<i class="fab fa-linkedin-in fa-fw"></i></span>linkedin.com/in/gustavo-bosak-santos
+										</a>
+									</li>
+									<li class="mb-3">
+										<a class="text-link" href="https://github.com/gustavo-bosak" target="_blank">
+											<span class="fa-container text-center me-2">
+												<i class="fab fa-github-alt fa-fw"></i></span>github.com/gustavo-bosak
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="resume-body p-5">
+				<section class="resume-section summary-section mb-5">
+					<h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Um Pouco Sobre Mim</h2>
+					<div class="resume-section-content">
+						<p class="mb-0"> Muito prazer, me chamo Gustavo Bosak Santos! Uma pessoa encantada pelo mundo do desenvolvimento, que desde o período da escola dava os primeiros passos na jornada na área, aprendendo os fundamentos de lógica de programação e JavaScript através do aprendizado online autodidáta. Depois de muita pesquisa sobre meus planos de carreira e alguns altos e baixos, iniciei meus estudos em Desenvolvimento Web e Java pelo programa Proprofissão do Instituto Proa, onde tenho cada vez mais me desenvolvido, tanto habilidades técnicas, quanto comportamentais. Embora minha experiência seja principalmente acadêmica e parte autodidata até agora, acredito que minha resiliência e dedicação para aprender são meus maiores ativos.</p>
+						<a class="btn" href="https://drive.google.com/file/d/14ZBq_CwIPY6Iu_rpYX9gjg8KK-h5q-FE/view?usp=sharing" target="_blank">Baixar meu Currículo</a>
+					</div>
+				</section>
+				<div class="row">
+					<div class="col-lg-9">
+						<section class="resume-section experience-section mb-5">
+							<h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Mapa de Carreira</h2>
+							<div class="resume-section-content">
+								<div class="resume-timeline position-relative">
+									<article class="resume-timeline-item position-relative pb-5">
+
+										<div class="resume-timeline-item-header mb-2">
+											<div class="d-flex flex-column flex-md-row">
+												<h3 class="resume-position-title font-weight-bold mb-1">Desenvolvedor Front End Júnior</h3>
+											</div>
+										</div>
+										<div class="resume-timeline-item-desc">
+											<p>Ao atuar como Desenvolvedor Front End Junior, na questão técnica, pretendo desenvolver e aprimorar primariamente minhas habilidades com as tecnologias principais do ramo, como HTML, CSS e JavaScript, além de frameworks e melhores noções de boa prática, como responsividade. No ambito comportamental, pretendo desenvolver de primeiro momento minhas habilidades em comunicação, senso crítico e experienciar a contribuição prática em projetos.</p>
+											</p>
+											<h4 class="resume-timeline-item-desc-heading font-weight-bold">
+												Soft Skills exigidas para essa carreira:
+											</h4>
+											<ul>
+												<li>Criatividade.</li>
+												<li>Atenção aos detalhes.</li>
+												<li>Dedicação a aprender.</li>
+												<li>Gestão de tempo.</li>
+											</ul>
+											<h4 class="resume-timeline-item-desc-heading font-weight-bold">
+												Roadmap de Aprendizado:</h4>
+											</h4>
+											<ul class="list-inline">
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">HTML/CSS</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">JavaScript</span>
+												</li>
+												<li class="list-inline-item"><span class="badge bg-secondary badge-pill">Git</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">React.js</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">Webpack</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">jQuery</span>
+												</li>
+											</ul>
+										</div>
+
+									</article>
+
+									<article class="resume-timeline-item position-relative pb-5">
+
+										<div class="resume-timeline-item-header mb-2">
+											<div class="d-flex flex-column flex-md-row">
+												<h3 class="resume-position-title font-weight-bold mb-1">Desenvolvedor de Software</h3>
+											</div>
+										</div>
+										<div class="resume-timeline-item-desc">
+											<p>Junto aos conhecimentos prévios sobre a área de Frontend, pretendo seguir também com o ramo de fullstack e atuar como Desenvolvedor de Software, tecendo habilidades no ramo técnico, como noções e linguagens de programação, processamento de dados e manutenção de código. Também no ramo comportamental, ao desenvolver e aprimorar resolução de conflitos, pensamento lógico e efetuar a responsabilidade por projetar, codificar e implementar sistemas e aplicações.</p>
+											<h4 class="resume-timeline-item-desc-heading font-weight-bold">
+												Soft Skills exigidas para essa carreira:
+											</h4>
+											<ul>
+												<li>Adaptabilidade.</li>
+												<li>Resolução de conflitos.</li>
+												<li>Pensamento crítico.</li>
+												<li>Persistência.</li>
+											</ul>
+											<h4 class="resume-timeline-item-desc-heading font-weight-bold">
+												Roadmap de Aprendizado:</h4>
+											<ul class="list-inline">
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">Python</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">API REST</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">Java</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">MySQL</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">PHP</span>
+												</li>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">Estruturas de Dados e POO</span>
+												</li>
+											</ul>
+										</div>
+
+									</article>
+
+									<article class="resume-timeline-item position-relative pb-5">
+
+										<div class="resume-timeline-item-header mb-2">
+											<div class="d-flex flex-column flex-md-row">
+												<h3 class="resume-position-title font-weight-bold mb-1">Engenheiro de Software</h3>
+
+											</div>
+										</div>
+										<div class="resume-timeline-item-desc">
+											<p>Após crescimento interpessoal na área de desenvolvimento, tenho intenção de seguir mais afundo nesse ramo e atuar como Engenheiro de Software, amplificando e construindo habilidades técnicas como projetar, desenvolver, executar e gerenciar sistemas e aplicações, controle de qualidade e estruturação de dados. Além disso, amplificar habilidades comportamentais como trabalho em equipe, pensamento analítico e desenvolver uma comunicação cada vez mais precisa.</p>
+											<h4 class="resume-timeline-item-desc-heading font-weight-bold">
+												Soft Skills exigidas para essa carreira:
+											</h4>
+											<ul>
+												<li>Pensamento crítico.</li>
+												<li>Comprometimento.</li>
+												<li>Resiliência.</li>
+												<li>Trabalho em equipe.</li>
+											</ul>
+											<h4 class="resume-timeline-item-desc-heading font-weight-bold">
+												Roadmap de Aprendizado:</h4>
+											<ul class="list-inline">
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">Django</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">DBA</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">GraphQL</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">JUnit</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">SOLID e Clean Code</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">DevOps</span>
+												</li>
+											</ul>
+										</div>
+
+									</article>
+
+									<article class="resume-timeline-item position-relative">
+
+										<div class="resume-timeline-item-header mb-2">
+											<div class="d-flex flex-column flex-md-row">
+												<h3 class="resume-position-title font-weight-bold mb-1">Tech Lead</h3>
+											</div>
+										</div>
+										<div class="resume-timeline-item-desc">
+											<p>Com o acúmulo de experiências comportamentais e técnicas, tenho intenção de investir na carreira de Tech Lead, com intuito de continuar me aprimorando frente às novas tecnologias que surgirão, sempre em prática. Para além do técnico, desenvolver melhor habilidades de liderança, inteligência emocional e dirigir estratégias eficazes, com foco em participação ativa nas decisões que envolvem a estruturação e desenvolvimento de projetos.</p>
+											<h4 class="resume-timeline-item-desc-heading font-weight-bold">
+												Soft Skills exigidas para essa carreira:
+											</h4>
+											<ul>
+												<li>Liderança.</li>
+												<li>Comunicação Efetiva.</li>
+												<li>Proatividade.</li>
+												<li>Inteligência Emocional.</li>
+											</ul>
+											<h4 class="resume-timeline-item-desc-heading font-weight-bold">
+												Roadmap de Aprendizado:</h4>
+											<ul class="list-inline">
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">Desenvolvimento Ágil</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">CI/CD</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">Kafka</span>
+												</li>
+												<li class="list-inline-item">
+													<span class="badge bg-secondary badge-pill">MongoDB</span>
+												</li>
+											</ul>
+										</div>
+									</article>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="col-lg-3">
+						<section class="resume-section skills-section mb-5">
+							<h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Soft e Hard
+								Skills</h2>
+							<p>Afinidade com as seguintes tecnologias e técnicas:</p>
+							<div class="resume-section-content">
+								<div class="resume-skill-item">
+									<h4 class="resume-skills-cat font-weight-bold">Frontend</h4>
+									<ul class="list-unstyled mb-4">
+										<li class="mb-2">
+											<div class="resume-skill-name">React.js</div>
+											<div class="progress resume-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 44%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+										<li class="mb-2">
+											<div class="resume-skill-name">JavaScript</div>
+											<div class="progress resume-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 86%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+										<li class="mb-2">
+											<div class="resume-skill-name">Node.js</div>
+											<div class="progress resume-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 12%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+										<li class="mb-2">
+											<div class="resume-skill-name">HTML/CSS/SASS/LESS</div>
+											<div class="progress resume-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 86%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+										<li class="mb-2">
+											<div class="resume-skill-name">Bootstrap/Tailwind</div>
+											<div class="progress resume-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 28%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+									</ul>
+								</div>
+
+								<div class="resume-skill-item">
+									<h4 class="resume-skills-cat font-weight-bold">Backend</h4>
+									<ul class="list-unstyled">
+										<li class="mb-2">
+											<div class="resume-skill-name">Java/Spring Boot</div>
+											<div class="progress resume-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 18%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+										<li class="mb-2">
+											<div class="resume-skill-name">Ruby/On Rails</div>
+											<div class="progress resume-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 15%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+										<li class="mb-2">
+											<div class="resume-skill-name">PHP</div>
+											<div class="progress resume-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 10%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+										<li class="mb-2">
+											<div class="resume-skill-name">MySQL</div>
+											<div class="progress resume-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 42%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+									</ul>
+								</div>
+
+								<div class="resume-skill-item">
+									<h4 class="resume-skills-cat font-weight-bold">Outras</h4>
+									<ul class="list-inline">
+										<li class="list-inline-item"><span class="badge badge-light">Typescript</span></li>
+										<li class="list-inline-item"><span class="badge badge-light">Code Review</span></li>
+										<li class="list-inline-item"><span class="badge badge-light">Vercel</span></li>
+										<li class="list-inline-item"><span class="badge badge-light">Unit Testing</span></li>
+										<li class="list-inline-item"><span class="badge badge-light">Wireframing</span></li>
+										<li class="list-inline-item"><span class="badge badge-light">Figma</span></li>
+										<li class="list-inline-item"><span class="badge badge-light">Sketch</span></li>
+										<li class="list-inline-item"><span class="badge badge-light">Flutter</span></li>
+										<li class="list-inline-item"><span class="badge badge-light">Hosting</span></li>
+										<li class="list-inline-item"><span class="badge badge-light">Next.js</span></li>
+									</ul>
+								</div>
+							</div>
+						</section>
+
+						<section class="resume-section language-section mb-5">
+							<h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Idiomas</h2>
+							<div class="resume-section-content">
+								<ul class="list-unstyled resume-lang-list">
+									<li class="mb-2"><span class="resume-lang-name font-weight-bold">Português</span>
+										<small class="text-muted font-weight-normal">(Nativo)</small>
+									</li>
+									<li class="mb-2 align-middle"><span class="resume-lang-name font-weight-bold">Inglês</span>
+										<small class="text-muted font-weight-normal">(Avançado)</small>
+									</li>
+								</ul>
+							</div>
+						</section>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
 </body>
+
 </html>
